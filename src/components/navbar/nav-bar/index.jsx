@@ -14,8 +14,9 @@ export default function NavBar() {
       <h3>E-Commerce</h3>
         <div className={style.shoppingCart} >
           <FaShoppingCart />
-          {cart.length}
+          <div>{cart.length}</div>
         </div>
+        
     </div>
   )
 }
