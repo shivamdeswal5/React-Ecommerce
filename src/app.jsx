@@ -1,16 +1,20 @@
 import './app.css'
 import Vendor from './components/vendor'
-import Navbar from './components/navbar'
 import Customer from './components/customer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-  
+
 
   return (
     <>
-      {/* <Navbar/>
-      <Vendor/> */}
-      <Customer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/vendor' element={<Vendor />} />
+          <Route path='/' element={<Customer />} />
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }

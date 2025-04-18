@@ -23,6 +23,12 @@ export default function AllProducts({ name, desc, price, category, img,id, produ
     alert('Item Added to Card');
   }
 
+  const removeFromCart = ()=>{
+    console.log("current product: ",id);
+    dispatch(remove(product.index));
+    alert('Item Removed to Card');
+  }
+
   return (
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' , 
     overflow:'hidden', cursor:'context-menu'}}
@@ -67,8 +73,12 @@ export default function AllProducts({ name, desc, price, category, img,id, produ
           ({category})
         </Typography>
 
-        <Button variant="solid" color="danger" size="lg" onClick={addToCart} >
+        <Button className={style.margin} variant="solid" color="danger" size="lg" onClick={addToCart} >
           Add to Cart
+        </Button>
+
+        <Button size="lg" onClick={removeFromCart} >
+          Remove From Cart
         </Button>
 
       </CardContent>
