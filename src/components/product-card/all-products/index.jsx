@@ -30,6 +30,7 @@ export default function AllProducts({ name, desc, price, category, img,id, produ
   }
 
   return (
+    
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' , 
     overflow:'hidden', cursor:'context-menu'}}
     className={style.products}>
