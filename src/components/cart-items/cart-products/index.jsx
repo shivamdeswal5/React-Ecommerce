@@ -10,10 +10,12 @@ import Typography from '@mui/joy/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useDispatch, useSelector } from 'react-redux';
 import {add,remove} from '../../../redux/slices/cart-slice'
+import style from './style.module.css'
 
-export default function CartProducts({name,desc,price,category}) {
+export default function CartProducts({name,desc,price,category,img,product,id}) {
 
       const {cart} = useSelector((state)=>state);
+      const dispatch = useDispatch();
 
       const removeFromCart = ()=>{
 
@@ -71,7 +73,7 @@ export default function CartProducts({name,desc,price,category}) {
                     </Typography>
 
                     <Button className={style.margin} variant="solid" color="danger" size="lg" onClick={removeFromCart} >
-                        Remove From Cart
+                        Remove from Cart
                     </Button>
 
                 </CardContent>
