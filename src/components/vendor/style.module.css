@@ -1,0 +1,99 @@
+.vendorContainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+}
+.vendorContainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+}
+.productHeading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+}
+
+.productData{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column;
+    font-weight: bold;    
+}
+
+.flex{
+    display: flex;
+
+}
+
+.productName{
+    display: flex;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.productDescription{
+    display: flex;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.productPrice{
+    display: flex;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.productCategory{
+    display: flex;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.productThumbnail{
+    display: flex;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+
+.submitBtn{
+    padding: 0.5rem;
+}
+
+.vendorproducts{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vendor-container{
+    display: flex;
+}
+
+.inputBar{
+    width: 50%;
+    height: 35px;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
