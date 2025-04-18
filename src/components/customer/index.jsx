@@ -3,9 +3,9 @@ import NavBar from '../navbar/nav-bar'
 import AllProducts from '../product-card/all-products'
 import style from './style.module.css'
 
-
-
 export default function Customer() {
+
+
   const products = JSON.parse(localStorage.getItem("vendorProducts"));
   const [searchItem, setSearchItem] = useState("");
 
@@ -48,6 +48,8 @@ export default function Customer() {
               category={product.productCategory}
               img={product.productThumbnail}
               id={index}
+              product = {product}
+              
             />
           ))
         }

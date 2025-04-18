@@ -9,14 +9,25 @@ import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import style from './style.module.css'
+import { useDispatch, useSelector } from 'react-redux';
+import {add,remove} from '../../../redux/slices/cart-slice'
 
 
-export default function AllProducts({ name, desc, price, category, img,products,setProducts,id }) {
+export default function AllProducts({ name, desc, price, category, img,id, product }) {
+
+  const {cart} = useSelector((state)=>state);
+  const dispatch = useDispatch();
+
+  const addToCart = ()=>{
+    dispatch(add(product));
+    alert('Item Added to Card');
+  }
 
   return (
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' , 
     overflow:'hidden', cursor:'context-menu'}}
     className={style.products}>
+      
       <CardOverflow>
         <AspectRatio sx={{ minWidth: 200 , height:''}}>
           <img
@@ -56,7 +67,7 @@ export default function AllProducts({ name, desc, price, category, img,products,
           ({category})
         </Typography>
 
-        <Button variant="solid" color="danger" size="lg" onClick={()=>deleteProduct(id)}>
+        <Button variant="solid" color="danger" size="lg" onClick={addToCart} >
           Add to Cart
         </Button>
 
