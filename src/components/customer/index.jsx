@@ -5,9 +5,9 @@ import style from './style.module.css'
 
 export default function Customer() {
 
-
-  const products = JSON.parse(localStorage.getItem("vendorProducts"));
   const [searchItem, setSearchItem] = useState("");
+  const vendorData = JSON.parse(localStorage.getItem("vendorProducts")) || {};
+  const products = Object.values(vendorData).flat();
 
   const handleSearch = (e) => {
     setSearchItem(e.target.value);
@@ -48,8 +48,7 @@ export default function Customer() {
               category={product.productCategory}
               img={product.productThumbnail}
               id={index}
-              product = {product}
-              
+              product = {product}  
             />
           ))
         }

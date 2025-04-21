@@ -11,6 +11,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import style from './style.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import {add,remove} from '../../../redux/slices/cart-slice'
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function AllProducts({ name, desc, price, category, img,id, product }) {
@@ -18,16 +19,32 @@ export default function AllProducts({ name, desc, price, category, img,id, produ
   const {cart} = useSelector((state)=>state);
   const dispatch = useDispatch();
 
-  const addToCart = ()=>{
-    dispatch(add(product));
-    alert('Item Added to Card');
-  }
+  const addToCart = () => {
+    const productWithId = {
+      ...product, 
+      id: uuidv4(),
+    };
+    console.log("Adding product with ID:", productWithId.id);
+    dispatch(add(productWithId)); 
+    alert('Item Added to Cart');
+  };
 
-  const removeFromCart = ()=>{
-    console.log("current product: ",id);
-    dispatch(remove(product.index));
-    alert('Item Removed to Card');
-  }
+  const removeFromCart = () => {
+    const itemInCart = cart.find((item) => 
+      item.productName === product.productName &&
+      item.productDescription === product.productDescription &&
+      item.productPrice === product.productPrice
+    );
+  
+    if (!itemInCart) {
+      console.error("Product not found in cart");
+      return;
+    }
+  
+    console.log("Removing product with ID:", itemInCart.id);
+    dispatch(remove(itemInCart.id)); 
+    alert('Item Removed from Cart');
+  };
 
   return (
     

@@ -11,6 +11,7 @@ export const CartSlice = createSlice({
             return state.filter((item)=>item.id !== action.payload);
         },
     }
+    
 
 });
 
